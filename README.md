@@ -38,9 +38,16 @@ Este proyecto fue construido utilizando tecnologías web fundamentales, sin fram
 
 ## 📸 Capturas de Pantalla
 
+**Escritorio** | https://raw.githubusercontent.com/Nicode-1946/Implementacion-CSS3-Flexbox-y-Grid-2/master/img/Escritorio.png
 
+https://raw.githubusercontent.com/Nicode-1946/Implementacion-CSS3-Flexbox-y-Grid-2/master/img/Escritorio2.png
 
----
+https://raw.githubusercontent.com/Nicode-1946/Implementacion-CSS3-Flexbox-y-Grid-2/master/img/EscritorioMoscuro.png
+
+**Tablet** | https://raw.githubusercontent.com/Nicode-1946/Implementacion-CSS3-Flexbox-y-Grid-2/master/img/Tablet.png
+**Celular** | https://raw.githubusercontent.com/Nicode-1946/Implementacion-CSS3-Flexbox-y-Grid-2/master/img/Celular.png
+
+https://raw.githubusercontent.com/Nicode-1946/Implementacion-CSS3-Flexbox-y-Grid-2/master/img/Menu_Hamburguesa.png
 
 ## 🎨 Decisiones de Diseño y Accesibilidad
 
