@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Ventas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header role="banner">
+        <h1>Dashboard</h1>
+        
+        <div>  
+            <button id="Modo" aria-pressed="false">🌙</button> 
+            
+            <button class="menu-Hamburguesa" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+        </div>
+    </header>
+
+    <nav role="navigation">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Reportes</a></li>
+            <li><a href="#">Usuarios</a></li>
+            <li><a href="#">Estadísticas</a></li>
+            <li><a href="#">Configuración</a></li>
+        </ul>
+    </nav>
+
+    <main role="main">
+        <article class="card">
+            <h2>Ventas del Mes</h2>
+            <p>$53.000.000</p>
+            <ul>
+                <li>Nuevos Clientes: 45</li>
+                <li>Ventas Online: $32.000.000</li>
+            </ul>
+        </article>
+
+        <article class="chart">
+            <h2>Rendimiento de Ventas</h2>
+            <img src='img/Gráfico_Ventas_tiempo.png' alt="Gráfico de barras mostrando ventas a lo largo del tiempo">
+        </article>
+        
+        <article class="chart">
+            <h2>Distribución de Productos</h2>
+            <img src='img/Gráfico_Torta_Ventas.png' alt="Gráfico de torta mostrando la distribución de ventas por producto">
+        </article>
+    </main>
+    
+    <footer role="contentinfo">
+        <p>&copy; 2025 Dashboard</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

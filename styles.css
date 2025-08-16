@@ -1,0 +1,186 @@
+
+/* :root define las variables para el modo claro (por defecto) */
+:root {
+    --color-primario: #0964c5;
+    --color-texto-primario: #ffffff;
+    --color-fondo: #f8f9fa;
+    --color-superficie: #ffffff;      /* Color para tarjetas, header, etc. */
+    --color-texto: #212529;           /* Color de texto principal */
+    --color-texto-secundario: #333;   /* Color para enlaces de nav */
+    --color-borde: #dee2e6;
+    --color-sombra: rgba(0, 0, 0, 0.05);
+    --color-sombra-hover: rgba(0, 0, 0, 0.1);
+    --borde-radio: 8px;
+}
+
+/* body.dark-mode reescribe las variables para el modo oscuro */
+body.dark-mode {
+    --color-primario: #317cd8;
+    --color-fondo: #121212;
+    --color-superficie: #1e1e1e;
+    --color-texto: #f1f1f1;
+    --color-texto-secundario: #e0e0e0;
+    --color-borde: #333333;
+    --color-sombra: rgba(255, 255, 255, 0.05);
+    --color-sombra-hover: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "nav    main"
+        "footer footer";
+    transition: background-color 0.3s ease, color 0.3s ease; /* Agregamos una transición para un cambio de tema suave */
+}
+
+header {
+    grid-area: header;
+    background-color: var(--color-superficie);
+    border-bottom: 1px solid var(--color-borde);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.menu-Hamburguesa {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-texto); /* Para que el ícono también cambie de color */
+}
+
+nav {
+    grid-area: nav;
+    background-color: var(--color-superficie);
+    border-right: 1px solid var(--color-borde);
+    padding: 20px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--color-texto-secundario);
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: var(--color-fondo);
+}
+
+main {
+    grid-area: main;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Aplicamos estilos a card y chart al mismo tiempo */
+.card, .chart {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    box-shadow: 0 2px 4px var(--color-sombra);
+    border-radius: var(--borde-radio);
+    padding: 24px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.card {
+    background-color: var(--color-primario);
+    color: var(--color-texto-primario);
+}
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card:hover, .chart:hover {
+    box-shadow: 0 6px 12px var(--color-sombra-hover);
+    transform: translateY(-5px);
+}
+
+.chart img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--borde-radio);
+}
+
+footer {
+    grid-area: footer;
+    background-color: var(--color-superficie);
+    border-top: 1px solid var(--color-borde);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+/* Media Query para tamaños de menos de 768px */
+
+
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "footer";
+        grid-template-rows: auto auto 1fr auto;
+    }
+
+    .menu-Hamburguesa {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 250px;
+        height: calc(100vh - 60px);
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out, background-color 0.3s ease, border-color 0.3s ease;
+        background-color: var(--color-superficie); /* El nav usará el color de superficie definido en la variable actual */
+    }
+
+    nav.activo {
+        transform: translateX(0);
+    }
+
+    main {
+        grid-area: main;
+    }
+}
